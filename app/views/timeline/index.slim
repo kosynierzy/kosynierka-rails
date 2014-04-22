@@ -1,0 +1,19 @@
+.timeline-form
+  - if user_signed_in?
+    = form_for @entry do |f|
+      .timeline-form__content
+        = f.text_area :content
+      .timeline-form__buttons
+        = f.submit t('timeline.add')
+  - else
+    p= t('timeline.sign_in_to_add_entry')
+
+.timeline-entries
+  - @entries.each do |entry|
+    .timeline-entry
+      .timeline-entry__author
+        = image_tag entry.user.gravatar_url(size: 24)
+        | #{entry.user.username} @ #{entry.created_at}
+      .timeline-entry__content= entry.content
+
+  = paginate @entries

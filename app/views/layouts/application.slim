@@ -1,0 +1,34 @@
+doctype html
+html lang="pl"
+  head
+    meta charset="utf-8"
+    title= t('page.title')
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    = javascript_include_tag "//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"
+  body
+    .header
+      .container
+        - if user_signed_in?
+          = link_to 'https://gravatar.com/', target: '_blank' do
+            = image_tag current_user.gravatar_url(size: 24), alt: 'avatar'
+          = form_tag(sign_out_path, method: :delete) do
+            = submit_tag t('page.sign_out')
+        - else
+          = link_to t('page.sign_in'), sign_in_path
+
+    .body
+      .container
+        - if notice.present?
+          p.notice= notice
+        - if alert.present?
+          p.alert= alert
+
+        = yield
+
+    .footer
+      .container
+        p= t('page.cookies_disclaimer')
+
+    = javascript_include_tag "application"

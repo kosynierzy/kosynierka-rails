@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: $color-white;
+  color: $default-text-color;
+  font: 400 16px/1.618 $default-font-stack;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $default-link-color;
+  text-decoration: none;
+  transition: color 0.2s ease-out, opacity 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    color: $hover-link-color;
+  }
+
+  &:active {
+    color: $active-link-color;
+    transition: none !important;
+  }
+}

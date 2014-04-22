@@ -1,0 +1,39 @@
+@import "neat-helpers";
+
+/* Grid */
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 10;
+$max-width: 1088px;
+
+$mobile: new-breakpoint(max-width 480px 4);
+
+/* Colors */
+/* See: http://colours.neilorangepeel.com/ */
+$color-black: #000;
+$color-brown: #A52A2A;
+$color-dodgerblue: #1E90FF;
+$color-firebrick: #B22222;
+$color-forestgreen: #228B22;
+$color-limegreen: #32CD32;
+$color-maroon: #800000;
+$color-skyblue: #87CEEB;
+$color-snow: #FFFAFA;
+$color-grey: #808080;
+$color-white: #FFF;
+$color-yellow: #FFFF00;
+
+/* Default text */
+$default-text-color: $color-black;
+$default-font-stack: source-sans-pro, sans-serif;
+
+/* Link colors */
+$default-link-color: $color-dodgerblue;
+$hover-link-color: darken($default-link-color, 10%);
+$active-link-color: $color-brown;
+
+/* Background colors */
+$bg-color-success: $color-limegreen;
+$bg-color-error: $color-firebrick;
+$bg-color-notice: $color-skyblue;
+$bg-color-warning: $color-yellow;

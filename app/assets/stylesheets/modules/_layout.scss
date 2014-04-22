@@ -1,0 +1,32 @@
+.container {
+  @include outer-container;
+}
+
+.header {
+  text-align: right;
+  border-bottom: 1px solid $color-forestgreen;
+
+  img {
+    border-radius: 50%;
+    float: left;
+  }
+}
+
+.body {
+  background-image: asset-url('hala.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: fixed;
+
+  .container {
+    background-color: $color-snow;
+    background-color: rgba($color-snow, .75);
+    padding: 1em;
+  }
+}
+
+.footer {
+  color: $color-grey;
+  font-size: 0.8em;
+  font-style: italic;
+}

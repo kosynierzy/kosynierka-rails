@@ -1,0 +1,29 @@
+.timeline {
+
+}
+
+.timeline-entry {
+  border-top: 1px solid $color-forestgreen;
+  padding-bottom: 1em;
+}
+
+.timeline-entry__author {
+  padding: .25em 0;
+  background-color: $color-snow;
+
+  img {
+    border-radius: 50%;
+    float: left;
+    margin-right: .25em;
+  }
+}
+
+.timeline-form {
+  padding-bottom: 1em;
+}
+
+.timeline-form__content {
+  textarea {
+    width: 100%;
+  }
+}

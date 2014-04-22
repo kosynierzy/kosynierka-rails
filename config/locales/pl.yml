@@ -1,0 +1,25 @@
+pl:
+  page:
+    title: 'kosynierka.info'
+    sign_in: 'Zaloguj'
+    sign_out: 'Wyloguj'
+    cookies_disclaimer: 'Wykorzystujemy ciasteczka (ang. cookies) oraz podobne technologie w celu świadczenia usług dostosowania serwisu do indywidualnych preferencji użytkowników oraz w celach statystycznych. Możesz zawsze wyłączyć ten mechanizm w ustawieniach przeglądarki. Korzystanie z naszego serwisu bez zmiany ustawień przeglądarki oznacza, że cookies będą zapisane w pamięci urządzenia.'
+  timeline:
+    add: 'Dodaj'
+    sign_in_to_add_entry: 'Zaloguj się, żeby dodać wpis'
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Wyświetla %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> z <b>%{total}</b> łącznie
+      one_page:
+        display_entries:
+          one: Wyświetla <b>%{count}</b> %{entry_name}
+          other: Wyświetla <b>wszystkie %{count}</b> %{entry_name}
+          zero: Nie znaleziono %{entry_name}
+  views:
+    pagination:
+      first: '&laquo; Pierwsza'
+      last: Ostatnia &raquo;
+      next: Dalej &rsaquo;
+      previous: '&lsaquo; Wstecz'
+      truncate: '&hellip;'

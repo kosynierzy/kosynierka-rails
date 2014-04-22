@@ -1,0 +1,22 @@
+.flash {
+  color: $color-white;
+  text-align: left;
+  text-shadow: 1px 1px 3px $color-black;
+  font-weight: bold;
+  padding: .5em;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, .3);
+}
+.notice {
+  @extend .flash;
+  background: $color-dodgerblue;
+  border-color: darken($color-dodgerblue, 10%);
+}
+
+.alert {
+  @extend .flash;
+  background: $color-firebrick;
+  border-color: darken($color-firebrick, 10%);
+}
