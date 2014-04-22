@@ -6,6 +6,8 @@ html lang="pl"
 
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
+    - if Rails.env.production?
+      = javascript_include_tag 'ga'
     = javascript_include_tag "//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"
   body
     .header
