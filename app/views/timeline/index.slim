@@ -14,7 +14,7 @@
   - @entries.each do |entry|
     .timeline-entry
       .timeline-entry__author
-        = image_tag entry.user.gravatar_url(size: 24)
+        = image_tag entry.user.gravatar_url(size: 64)
         | #{entry.user.username} @ #{entry.created_at}
       .timeline-entry__content
         == entry.content_html

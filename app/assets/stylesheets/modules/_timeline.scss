@@ -8,13 +8,16 @@
 }
 
 .timeline-entry__author {
-  padding: .25em 0;
+  padding: .25em 43px;
   background-color: $color-snow;
+  position: relative;
 
   img {
     border-radius: 50%;
-    float: left;
-    margin-right: .25em;
+    box-shadow: 1px 1px 3px $color-black;
+    position: absolute;
+    left: -34px;
+    top: -14px;
   }
 }
 
