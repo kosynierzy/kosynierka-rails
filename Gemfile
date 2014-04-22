@@ -28,7 +28,7 @@ gem 'pg'
 # views
 gem 'gravtastic'
 gem 'kaminari'
-gem 'representable', '~> 1.7.6'
+gem 'representable', '~> 1.8.1'
 gem 'slim-rails'
 
 group :development, :test do
