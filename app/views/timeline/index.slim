@@ -5,6 +5,8 @@
         = f.text_area :content
       .timeline-form__buttons
         = f.submit t('timeline.add')
+      .timeline-form__help
+        p== t('timeline.markdown_help')
   - else
     p= t('timeline.sign_in_to_add_entry')
 
@@ -14,6 +16,7 @@
       .timeline-entry__author
         = image_tag entry.user.gravatar_url(size: 24)
         | #{entry.user.username} @ #{entry.created_at}
-      .timeline-entry__content= entry.content
+      .timeline-entry__content
+        == entry.content_html
 
   = paginate @entries

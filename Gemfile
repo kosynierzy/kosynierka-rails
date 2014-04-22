@@ -28,6 +28,7 @@ gem 'pg'
 # views
 gem 'gravtastic'
 gem 'kaminari'
+gem 'redcarpet'
 gem 'representable', '~> 1.8.1'
 gem 'slim-rails'
 
