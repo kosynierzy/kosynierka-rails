@@ -12,11 +12,16 @@
 
 .timeline-entries
   - @entries.each do |entry|
-    .timeline-entry id="entry-#{entry.id}"
-      .timeline-entry__author
-        = image_tag entry.user.gravatar_url(size: 64)
-        | #{entry.user.username} @ #{l(entry.created_at, format: :timeline)}
-        .timeline-entry__id
+    section.timeline-entry id="entry-#{entry.id}"
+      header.timeline-entry__header
+        .timeline-entry__avatar
+          = image_tag entry.user.gravatar_url(size: 64)
+        span.timeline-entry__username
+          = entry.user.username
+        | @
+        = time_tag  datetime=entry.created_at, class: 'timeline-entry__time' do
+          = l(entry.created_at, format: :timeline)
+        span.timeline-entry__id
           = link_to "##{entry.id}", "#entry-#{entry.id}"
       .timeline-entry__content
         == entry.content_html

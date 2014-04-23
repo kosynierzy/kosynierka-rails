@@ -32,18 +32,30 @@
   }
 }
 
-.timeline-entry__author {
-  padding: .25em .25em .25em 43px;
+.timeline-entry__header {
+  padding: .25em .25em .25em 38px;
   background-color: $color-snow;
   position: relative;
+}
+
+.timeline-entry__avatar {
+  position: absolute;
+  left: -38px;
+  top: -14px;
 
   img {
     border-radius: 50%;
     box-shadow: 1px 1px 3px $color-black;
-    position: absolute;
-    left: -34px;
-    top: -14px;
   }
+}
+
+.timeline-entry__username {
+  font-weight: bold;
+  margin-right: .25em;
+}
+
+.timeline-entry__time {
+  margin-left: .25em;
 }
 
 .timeline-entry__id {
