@@ -25,3 +25,6 @@ pl:
       next: Dalej &rsaquo;
       previous: '&lsaquo; Wstecz'
       truncate: '&hellip;'
+  time:
+    formats:
+      timeline: ! '%d-%m-%Y %H:%M:%S'
