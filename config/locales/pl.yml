@@ -4,6 +4,7 @@ pl:
     sign_in: 'Zaloguj'
     sign_out: 'Wyloguj'
     cookies_disclaimer: 'Wykorzystujemy ciasteczka (ang. cookies) oraz podobne technologie w celu świadczenia usług dostosowania serwisu do indywidualnych preferencji użytkowników oraz w celach statystycznych. Możesz zawsze wyłączyć ten mechanizm w ustawieniach przeglądarki. Korzystanie z naszego serwisu bez zmiany ustawień przeglądarki oznacza, że cookies będą zapisane w pamięci urządzenia.'
+    change_avatar: 'zmień avatara'
   timeline:
     add: 'Dodaj'
     sign_in_to_add_entry: 'Zaloguj się, żeby dodać wpis'

@@ -13,8 +13,9 @@ html lang="pl"
     .header
       .container
         - if user_signed_in?
-          = link_to 'https://gravatar.com/', target: '_blank' do
+          = link_to 'https://gravatar.com/', target: '_blank', class: 'header-gravatar' do
             = image_tag current_user.gravatar_url(size: 24), alt: 'avatar'
+            = t('page.change_avatar')
           = form_tag(sign_out_path, method: :delete) do
             = submit_tag t('page.sign_out')
         - else

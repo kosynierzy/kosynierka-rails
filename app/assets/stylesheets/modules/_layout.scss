@@ -5,10 +5,14 @@
 .header {
   text-align: right;
   border-bottom: 1px solid $color-forestgreen;
+}
+.header-gravatar {
+  float: left;
 
   img {
-    border-radius: 50%;
     float: left;
+    margin-right: .25em;
+    border-radius: 50%;
   }
 }
 
