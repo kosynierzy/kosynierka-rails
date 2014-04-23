@@ -33,7 +33,7 @@
 }
 
 .timeline-entry__author {
-  padding: .25em 43px;
+  padding: .25em .25em .25em 43px;
   background-color: $color-snow;
   position: relative;
 
@@ -44,6 +44,10 @@
     left: -34px;
     top: -14px;
   }
+}
+
+.timeline-entry__id {
+  float: right;
 }
 
 .timeline-form {

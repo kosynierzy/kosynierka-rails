@@ -12,10 +12,12 @@
 
 .timeline-entries
   - @entries.each do |entry|
-    .timeline-entry
+    .timeline-entry id="entry-#{entry.id}"
       .timeline-entry__author
         = image_tag entry.user.gravatar_url(size: 64)
         | #{entry.user.username} @ #{entry.created_at}
+        .timeline-entry__id
+          = link_to "##{entry.id}", "#entry-#{entry.id}"
       .timeline-entry__content
         == entry.content_html
 
