@@ -2,6 +2,14 @@ doctype html
 html lang="pl"
   head
     meta charset="utf-8"
+    meta name="description" content=t('page.meta.description')
+    meta name="keywords" content=t('page.meta.keywords')
+    meta property="og:title" content=t('page.meta.fb.title')
+    meta property="og:url" content="http://kosynierka.info/"
+    meta property="og:site_name" content=t('page.meta.fb.site_name')
+    meta property="og:description" content=t('page.meta.description')
+    meta property="og:image" content=image_url('hala.jpg')
+    meta property="og:type" content="sport"
     title= t('page.title')
 
     = stylesheet_link_tag 'application', media: 'all'
