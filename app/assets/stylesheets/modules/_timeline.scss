@@ -5,6 +5,31 @@
 .timeline-entry {
   border-top: 1px solid $color-forestgreen;
   padding-bottom: 1em;
+
+  blockquote {
+    background-color: $color-snow;
+    border: 1px solid $color-forestgreen;
+    padding: 0 1em;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      font-size: 36px;
+      content: '”';
+      color: $color-grey;
+    }
+
+    &:before {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      font-size: 36px;
+      content: '„';
+      color: $color-grey;
+    }
+  }
 }
 
 .timeline-entry__author {
