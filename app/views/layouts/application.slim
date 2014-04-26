@@ -20,14 +20,17 @@ html lang="pl"
   body
     .header
       .container
-        - if user_signed_in?
-          = link_to 'https://gravatar.com/', target: '_blank', class: 'header-gravatar' do
-            = image_tag current_user.gravatar_url(size: 24), alt: 'avatar'
-            = t('page.change_avatar')
-          = form_tag(sign_out_path, method: :delete) do
-            = submit_tag t('page.sign_out')
-        - else
-          = link_to t('page.sign_in'), sign_in_path
+        nav.main-navigation
+          = link_to 'kosynierzy.info', 'http://kosynierzy.info/', class: 'main-navigation__element'
+          - if user_signed_in?
+            = link_to t('page.edit_account'), Rails.application.secrets.account_url, class: 'main-navigation__element'
+
+        .sign-in-out-navigation
+          - if user_signed_in?
+            = form_tag(sign_out_path, method: :delete) do
+              = submit_tag t('page.sign_out'), class: 'sign-in-out-navigation__button'
+          - else
+            = link_to t('page.sign_in'), sign_in_path
 
     .body
       .container

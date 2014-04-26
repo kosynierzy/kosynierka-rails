@@ -1,10 +1,10 @@
 pl:
   page:
     title: 'kosynierka.info'
-    sign_in: 'Zaloguj'
-    sign_out: 'Wyloguj'
+    sign_in: 'zaloguj'
+    sign_out: 'wyloguj'
     cookies_disclaimer: 'Wykorzystujemy ciasteczka (ang. cookies) oraz podobne technologie w celu świadczenia usług dostosowania serwisu do indywidualnych preferencji użytkowników oraz w celach statystycznych. Możesz zawsze wyłączyć ten mechanizm w ustawieniach przeglądarki. Korzystanie z naszego serwisu bez zmiany ustawień przeglądarki oznacza, że cookies będą zapisane w pamięci urządzenia.'
-    change_avatar: 'zmień avatara'
+    edit_account: 'edytuj konto'
     meta:
       description: 'kosynierka.info - lista dyskusyjna koszykarskiego Śląska Wrocław'
       keywords: 'wks,slask,wroclaw,śląsk,wrocław,lista dyskusyjna,śląsk wrocław,slask wroclaw'
