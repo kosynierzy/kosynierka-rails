@@ -6,6 +6,7 @@ class EntriesController < ApplicationController
   def create
     @entry = current_user.entries.new(entry_params)
     @entry.content_html = markdown.render(@entry.content)
+    @entry.ip_address = request.remote_ip
     @entry.save
 
     respond_with(@entry) do |format|
