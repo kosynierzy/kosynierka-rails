@@ -11,6 +11,8 @@ pl:
       fb:
         title: 'kosynierka.info - lista dyskusyjna'
         site_name: 'kosynierka.info'
+  entry:
+    added: 'Dodano!'
   timeline:
     add: 'Dodaj'
     sign_in_to_add_entry: 'Zaloguj się, żeby dodać wpis'

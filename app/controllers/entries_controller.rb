@@ -4,40 +4,23 @@ class EntriesController < ApplicationController
   respond_to :html
 
   def create
-    @entry = current_user.entries.new(entry_params)
-    @entry.content_html = markdown.render(@entry.content)
-    @entry.ip_address = request.remote_ip
-    @entry.save
+    form = CreateEntryForm.new(entry_params)
+    use_case = CreateEntry.new(current_user, form)
 
-    respond_with(@entry) do |format|
-      format.html { redirect_to root_path }
+    use_case.call do |entry|
+      entry.ip_address = request.remote_ip
     end
+
+    redirect_to root_path, notice: t('entry.added')
+  rescue ValidationError => error
+    redirect_to root_path, alert: error.errors.full_messages.join(', ')
+  rescue UnknownFieldError
+    render status: 400
   end
 
   private
 
   def entry_params
     params.require(:entry).permit(:content)
-  end
-
-  def markdown
-    @markdown ||= Redcarpet::Markdown.new(markdown_renderer, markdown_extensions)
-  end
-
-  def markdown_renderer
-    Redcarpet::Render::HTML.new({
-      filter_html: true,
-      link_attributes: { target: '_blank' }
-    })
-  end
-
-  def markdown_extensions
-    {
-      autolink: true,
-      strikethrough: true,
-      space_after_headers: true,
-      highlight: true,
-      quote: true
-    }
   end
 end

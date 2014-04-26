@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # core
 gem 'rails', '4.1.0'
+gem 'virtus'
 
 # assets
 gem 'coffee-rails', '~> 4.0.0'
