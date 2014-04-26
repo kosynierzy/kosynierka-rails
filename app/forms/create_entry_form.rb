@@ -17,4 +17,10 @@ class CreateEntryForm
   def validate!
     raise ValidationError, errors unless valid?
   end
+
+  class << self
+    def i18n_scope
+      :activerecord
+    end
+  end
 end

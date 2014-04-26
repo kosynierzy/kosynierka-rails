@@ -17,6 +17,10 @@ pl:
     add: 'Dodaj'
     sign_in_to_add_entry: 'Zaloguj się, żeby dodać wpis'
     markdown_help: 'Podczas pisania można korzystać ze składni <a href="http://pl.wikipedia.org/wiki/Markdown" title="Markdown">Markdown</a>'
+  activerecord:
+    attributes:
+      create_entry_form:
+        content: 'Pole z treścią'
   helpers:
     page_entries_info:
       more_pages:
