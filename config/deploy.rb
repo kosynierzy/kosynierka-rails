@@ -69,6 +69,19 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp"]
 end
 
+desc "Restart puma"
+task :restart => :environment do
+  queue! %[
+    if [ -e '#{puma_pid}' ]; then
+      echo '-----> Restarting puma...';
+      cd #{deploy_to}/#{current_path} && #{pumactl_cmd} -S #{puma_state} restart
+    else
+      print 'Puma is not running!';
+      exit 1;
+    fi
+  ]
+end
+
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
@@ -81,7 +94,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      invoke :'puma:restart'
+      invoke :'restart'
     end
   end
 end
