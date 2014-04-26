@@ -28,10 +28,10 @@ set :user, 'deploy'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
 
 # Puma settings
-puma_socket "unix:///#{deploy_to}/#{shared_path}/tmp/sockets/puma.sock"
-puma_pid "#{deploy_to}/#{shared_path}/tmp/pids/puma.pid"
-puma_state "#{deploy_to}/#{shared_path}/tmp/states/puma.state"
-pumactl_socket "unix:///#{deploy_to}/#{shared_path}/tmp/sockets/pumactl.sock"
+set :puma_socket, "unix:///#{deploy_to}/#{shared_path}/tmp/sockets/puma.sock"
+set :puma_pid, "#{deploy_to}/#{shared_path}/tmp/pids/puma.pid"
+set :puma_state, "#{deploy_to}/#{shared_path}/tmp/states/puma.state"
+set :pumactl_socket, "unix:///#{deploy_to}/#{shared_path}/tmp/sockets/pumactl.sock"
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
@@ -81,8 +81,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue "touch #{deploy_to}/#{shared_path}/tmp/restart.txt"
-      invoke :'puma:phased_restart'
+      invoke :'puma:restart'
     end
   end
 end
