@@ -22,12 +22,12 @@ html lang="pl"
       .container
         nav.main-navigation
           = link_to 'kosynierzy.info', 'http://kosynierzy.info/', class: 'main-navigation__element'
-          - if user_signed_in?
-            = link_to t('page.edit_account'), Rails.application.secrets.account_url, class: 'main-navigation__element'
+          = link_to 'wks-slask.pl', 'http://wks-slask.pl/', class: 'main-navigation__element'
 
         .sign-in-out-navigation
           - if user_signed_in?
-            = form_tag(sign_out_path, method: :delete) do
+            = link_to t('page.edit_account'), Rails.application.secrets.account_url, class: 'sign-in-out-navigation__element'
+            = form_tag(sign_out_path, method: :delete, class: 'sign-in-out-navigation__element') do
               = submit_tag t('page.sign_out'), class: 'sign-in-out-navigation__button'
           - else
             = link_to t('page.sign_in'), sign_in_path
