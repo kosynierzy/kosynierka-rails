@@ -38,6 +38,12 @@
   }
 }
 
+.timeline-entry--new {
+  .timeline-entry__time {
+    font-weight: bold;
+  }
+}
+
 .timeline-entry__header {
   padding: .25em .25em .25em 32px;
   background-color: $color-snow;

@@ -1,6 +1,6 @@
 .timeline-form
   - if user_signed_in?
-    = form_for entry do |f|
+    = form_for @view.new_entry do |f|
       .timeline-form__content
         = f.text_area :content
       .timeline-form__buttons
@@ -11,8 +11,8 @@
     p= t('timeline.sign_in_to_add_entry')
 
 .timeline-entries
-  - entries.each do |entry|
-    section.timeline-entry id="entry-#{entry.id}" class=('timeline-entry--banned' if entry.banned?)
+  - @view.decorated_entries.each do |entry|
+    section.timeline-entry id="entry-#{entry.id}" class=([('timeline-entry--banned' if entry.banned?), ('timeline-entry--new' unless entry.seen?)].compact)
       header.timeline-entry__header
         .timeline-entry__avatar
           = image_tag entry.user.gravatar_url(size: 58)
@@ -25,13 +25,9 @@
           = link_to "##{entry.id}", "#entry-#{entry.id}"
         - if current_user && current_user.moderator?
           span.timeline-entry__moderator_options
-            - if entry.banned?
-              = form_tag([entry, :ban], method: :delete) do
-                = submit_tag t('entry.remove_ban')
-            - else
-              = form_tag([entry, :ban]) do
-                = submit_tag t('entry.ban')
+            = form_tag(entry.ban_url, entry.ban_url_options) do
+              = submit_tag entry.ban_submit_label
       .timeline-entry__content
-        == entry.content_html
+        == entry.content
 
-  = paginate entries
+  = paginate @view.entries

@@ -49,6 +49,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chronic (0.10.2)
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -59,6 +60,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    delorean (2.1.0)
+      chronic
     descendants_tracker (0.0.3)
     diff-lcs (1.2.5)
     equalizer (0.0.9)
@@ -235,6 +238,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 2.2.1)
   coffee-rails (~> 4.0.0)
+  delorean
   factory_girl_rails (~> 4.4.1)
   gravtastic
   hipchat

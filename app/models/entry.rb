@@ -7,4 +7,9 @@ class Entry < ActiveRecord::Base
   def banned?
     banned_by.present?
   end
+
+  def seen?(user)
+    return true unless user
+    user.last_seen_entry_at >= created_at
+  end
 end

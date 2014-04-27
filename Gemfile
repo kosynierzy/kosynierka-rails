@@ -42,6 +42,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.2.1'
+  gem 'delorean'
   gem 'factory_girl_rails', '~> 4.4.1'
 end
 
