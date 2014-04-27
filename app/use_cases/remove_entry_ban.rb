@@ -26,6 +26,6 @@ class RemoveEntryBan
   def notify!(entry)
     hipchat = HipchatNotification.new
     options = { notify: true, color: 'yellow' }
-    hipchat.send("Ban removed from entry #{entry.id} banned by #{user.username}", options)
+    hipchat.send("Ban removed from entry #{entry.id} by #{user.username}", options)
   end
 end
