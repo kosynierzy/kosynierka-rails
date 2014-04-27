@@ -18,6 +18,24 @@ class EntriesController < ApplicationController
     render status: 400
   end
 
+  def ban
+    use_case = BanEntry.new(current_user, params[:entry_id])
+    use_case.call
+
+    redirect_to root_path, notice: t('entry.banned')
+  rescue PermissionError
+    redirect_to root_path, status: 403
+  end
+
+  def remove_ban
+    use_case = RemoveEntryBan.new(current_user, params[:entry_id])
+    use_case.call
+
+    redirect_to root_path, notice: t('entry.ban_removed')
+  rescue PermissionError
+    redirect_to root_path, status: 403
+  end
+
   private
 
   def entry_params

@@ -13,6 +13,10 @@ pl:
         site_name: 'kosynierka.info'
   entry:
     added: 'Dodano!'
+    ban: 'Zbanuj wpis'
+    remove_ban: 'Odbanuj wpis'
+    banned: 'Wpis zbanowany!'
+    ban_removed: 'Ban zdjęty!'
   timeline:
     add: 'Dodaj'
     sign_in_to_add_entry: 'Zaloguj się, żeby dodać wpis'

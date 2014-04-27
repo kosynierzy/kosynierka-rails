@@ -1,5 +1,22 @@
 require 'spec_helper'
 
 describe Entry do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#banned?' do
+    it 'returns false if entry was not banned' do
+      entry = described_class.new
+      entry.banned_at = nil
+      entry.banned_by = nil
+
+      expect(entry.banned?).to eq(false)
+    end
+
+    it 'returns true if entry was banned' do
+      user = create(:user)
+      entry = described_class.new
+      entry.banned_at = Time.now
+      entry.banned_by = user
+
+      expect(entry.banned?).to eq(true)
+    end
+  end
 end

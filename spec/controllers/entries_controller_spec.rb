@@ -56,4 +56,30 @@ describe EntriesController do
       end
     end
   end
+
+  describe 'POST ban' do
+    before do
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    let(:entry) { create(:entry) }
+
+    context 'not a moderator' do
+      let(:user) { create(:user) }
+
+      it 'returns forbidden error' do
+        post :ban, entry_id: entry.id
+
+        expect(response.status).to eq(403)
+      end
+
+      it 'does not ban entry' do
+        post :ban, entry_id: entry.id
+
+        entry.reload
+
+        expect(entry.banned?).to eq(false)
+      end
+    end
+  end
 end

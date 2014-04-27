@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426195812) do
+ActiveRecord::Schema.define(version: 20140426231254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,19 @@ ActiveRecord::Schema.define(version: 20140426195812) do
     t.uuid     "user_id"
     t.text     "content_html"
     t.inet     "ip_address"
+    t.uuid     "banned_by"
+    t.datetime "banned_at"
   end
 
+  add_index "entries", ["banned_by"], name: "index_entries_on_banned_by", using: :btree
   add_index "entries", ["user_id"], name: "index_entries_on_user_id", using: :btree
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "email",      null: false
-    t.string   "username",   null: false
+    t.string   "email",                      null: false
+    t.string   "username",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "moderator",  default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

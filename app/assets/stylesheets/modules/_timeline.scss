@@ -32,6 +32,12 @@
   }
 }
 
+.timeline-entry--banned {
+  .timeline-entry__header {
+    background-color: $color-grey;
+  }
+}
+
 .timeline-entry__header {
   padding: .25em .25em .25em 32px;
   background-color: $color-snow;
@@ -56,6 +62,11 @@
 
 .timeline-entry__time {
   margin-left: .25em;
+}
+
+.timeline-entry__moderator_options {
+  margin-right: .25em;
+  float: right;
 }
 
 .timeline-entry__id {
