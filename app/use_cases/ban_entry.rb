@@ -13,11 +13,19 @@ class BanEntry
     entry.banned_by = user
     entry.banned_at = Time.now
     entry.save
+
+    notify!(entry) if Rails.application.secrets.hipchat_notifications
   end
 
   private
 
   def authorize!
     fail PermissionError, user unless user.moderator?
+  end
+
+  def notify!(entry)
+    hipchat = HipchatNotification.new
+    options = { notify: true, color: 'yellow' }
+    hipchat.send("Entry #{entry.id} banned by #{entry.banned_by.username}", options)
   end
 end

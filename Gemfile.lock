@@ -74,6 +74,11 @@ GEM
     gravtastic (3.2.6)
     hashie (2.1.1)
     hike (1.2.3)
+    hipchat (1.1.0)
+      httparty
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     ice_nine (0.11.0)
     json (1.8.1)
@@ -232,6 +237,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.4.1)
   gravtastic
+  hipchat
   kaminari
   letter_opener
   neat (~> 1.5.0)

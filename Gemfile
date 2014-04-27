@@ -18,6 +18,7 @@ gem 'omniauth-kosynierzy', github: 'kosynierzy/omniauth-kosynierzy'
 gem 'rails-i18n', '~> 4.0.0'
 
 # server
+gem 'hipchat'
 gem 'puma'
 gem 'sentry-raven'
 # Use unicorn as the app server
