@@ -21,30 +21,33 @@ html lang="pl"
     = javascript_include_tag "//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"
   body
     .header
-      .container
-        nav.main-navigation
-          = link_to 'kosynierzy.info', 'http://kosynierzy.info/', class: 'main-navigation__element'
-          = link_to 'wks-slask.pl', 'http://wks-slask.pl/', class: 'main-navigation__element'
+      .outer
+        .section-content
+          nav.main-navigation
+            = link_to 'kosynierzy.info', 'http://kosynierzy.info/', class: 'main-navigation__element'
+            = link_to 'wks-slask.pl', 'http://wks-slask.pl/', class: 'main-navigation__element'
 
-        .sign-in-out-navigation
-          - if user_signed_in?
-            = link_to t('page.edit_account'), Rails.application.secrets.account_url, class: 'sign-in-out-navigation__element'
-            = form_tag(sign_out_path, method: :delete, class: 'sign-in-out-navigation__element') do
-              = submit_tag t('page.sign_out'), class: 'sign-in-out-navigation__button'
-          - else
-            = link_to t('page.sign_in'), sign_in_path
+          .sign-in-out-navigation
+            - if user_signed_in?
+              = link_to t('page.edit_account'), Rails.application.secrets.account_url, class: 'sign-in-out-navigation__element'
+              = form_tag(sign_out_path, method: :delete, class: 'sign-in-out-navigation__element') do
+                = submit_tag t('page.sign_out'), class: 'sign-in-out-navigation__button'
+            - else
+              = link_to t('page.sign_in'), sign_in_path
 
     .body
-      .container
-        - if notice.present?
-          p.notice= notice
-        - if alert.present?
-          p.alert= alert
+      .outer
+        .main-section.section-content
+          - if notice.present?
+            p.notice= notice
+          - if alert.present?
+            p.alert= alert
 
-        = yield
+          = yield
 
     .footer
-      .container
-        p= t('page.cookies_disclaimer')
+      .outer
+        .section-content
+          p= t('page.cookies_disclaimer')
 
     /* = javascript_include_tag "application" */

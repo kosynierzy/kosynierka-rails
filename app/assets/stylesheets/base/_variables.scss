@@ -1,12 +1,16 @@
 @import "neat-helpers";
 
 /* Grid */
-$column: 90px;
-$gutter: 30px;
+$column: 68px;
+$gutter: 24px;
 $grid-columns: 10;
-$max-width: 1088px;
+$max-width: 992px;
+$visual-grid: true;
 
-$mobile: new-breakpoint(max-width 480px 4);
+$desktop: new-breakpoint(min-width 992px 10);
+$tablet: new-breakpoint(min-width 768px max-width 991px 8);
+$wide-mobile: new-breakpoint(min-width 480px max-width 767px 5);
+$mobile: new-breakpoint(min-width 0 max-width 479px 3);
 
 /* Colors */
 /* See: http://colours.neilorangepeel.com/ */

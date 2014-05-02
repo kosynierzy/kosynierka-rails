@@ -77,6 +77,10 @@
 
 .timeline-entry__id {
   float: right;
+
+  @include media($mobile) {
+    display: none;
+  }
 }
 
 .timeline-form {
