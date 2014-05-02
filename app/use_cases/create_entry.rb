@@ -15,10 +15,19 @@ class CreateEntry
     yield entry if block_given?
 
     entry.save
+
+    notify!(entry) if Rails.application.secrets.hipchat_notifications
+
     entry
   end
 
   private
+
+  def notify!(entry)
+    hipchat = HipchatNotification.new
+    options = { notify: true, color: 'green' }
+    hipchat.send("New entry #{entry.id} by #{user.username}", options)
+  end
 
   def markdown
     @markdown ||= Redcarpet::Markdown.new(markdown_renderer, markdown_extensions)
