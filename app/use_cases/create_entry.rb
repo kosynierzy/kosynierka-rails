@@ -25,8 +25,8 @@ class CreateEntry
 
   def notify!(entry)
     hipchat = HipchatNotification.new
-    options = { notify: true, color: 'green' }
-    hipchat.send("New entry #{entry.id} by #{user.username}", options)
+    options = { notify: true, color: 'green', message_format: 'html' }
+    hipchat.send("New entry #{entry.id} by #{user.username}<br>#{entry.content_html}", options)
   end
 
   def markdown
