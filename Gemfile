@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # core
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.1'
 gem 'virtus'
 
 # assets
@@ -31,7 +31,7 @@ gem 'pg'
 gem 'gravtastic'
 gem 'kaminari'
 gem 'redcarpet'
-gem 'representable', '~> 1.8.1'
+gem 'representable', '~> 2.0.3'
 gem 'slim-rails'
 
 group :development, :test do
