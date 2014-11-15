@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EntriesController do
+RSpec.describe EntriesController, type: :controller do
   let(:valid_params) do
     {
       entry: {
