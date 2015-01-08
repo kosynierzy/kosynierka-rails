@@ -35,7 +35,8 @@ class Authorize
   def user_attrs
     {
       email: info[:email],
-      username: info[:username]
+      username: info[:username],
+      roles: info[:roles]
     }
   end
 end

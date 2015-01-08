@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   has_many :entries
   belongs_to :last_seen_entry, class_name: 'Entry'
 
+  def moderator?
+    roles.include?('moderator')
+  end
+
   def last_seen_entry_at
     if last_seen_entry
       last_seen_entry.created_at
