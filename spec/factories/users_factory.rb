@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:username) { |n| "user#{n}" }
 
     trait(:moderator) do
-      moderator true
+      roles ['moderator']
     end
   end
 end

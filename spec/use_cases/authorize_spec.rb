@@ -6,7 +6,8 @@ describe Authorize do
   let(:info) do
     {
       email: email,
-      username: username
+      username: username,
+      roles: []
     }
   end
   let(:options) { {user_repo: user_repo} }
@@ -55,7 +56,7 @@ describe Authorize do
   end
 
   class UserMock
-    attr_accessor :id, :email, :username
+    attr_accessor :id, :email, :username, :roles
 
     def initialize(attrs)
       update_attributes!(attrs)
