@@ -182,7 +182,7 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 2.12)
       sprockets-rails (~> 2.0)
-    sentry-raven (0.12.0)
+    sentry-raven (0.12.2)
       faraday (>= 0.7.6)
     slim (2.1.0)
       temple (~> 0.6.9)
